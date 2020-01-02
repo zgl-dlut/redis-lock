@@ -1,0 +1,4 @@
+# Auto Configure
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+# com.zgl.distribute.lock.configuration.DistributedLockAutoConfiguration,\
+# com.zgl.distribute.lock.aspect.DistributedLockAspectConfiguration
