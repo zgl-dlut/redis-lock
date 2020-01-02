@@ -19,7 +19,7 @@ public class TestController {
 
 	@GetMapping("/lock")
 	public void test() {
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 5; i++) {
 			new Thread(() -> service.test()).start();
 		}
 	}

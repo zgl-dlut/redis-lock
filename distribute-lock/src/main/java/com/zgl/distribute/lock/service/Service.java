@@ -1,6 +1,7 @@
 package com.zgl.distribute.lock.service;
 
 import com.zgl.distribute.lock.annotation.DistributeLock;
+import com.zgl.distribute.lock.annotation.RedisLock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +18,11 @@ public class Service {
 	private AtomicInteger atomicInteger = new AtomicInteger(500);
 	private int i = 500;
 
-	@DistributeLock(lockKey = "zgl")
+	//@DistributeLock(lockKey = "zgl")
+	@RedisLock(value = "zgl")
 	public void test() {
 		log.info(Thread.currentThread().getName() + "获得了锁");
-		log.info("=================atomicInteger:{}=======i:{}", atomicInteger.getAndDecrement(), i--);
+		log.info("{}=================atomicInteger:{}=======i:{}", Thread.currentThread().getName(), atomicInteger.getAndDecrement(), i--);
 
 	}
 }
