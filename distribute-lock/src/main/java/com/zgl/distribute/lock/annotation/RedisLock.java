@@ -11,7 +11,7 @@ public @interface RedisLock {
 	String value() default "default";
 
 	/** 持锁时间,单位毫秒*/
-	long keepMills() default 5000;
+	long keepMills() default 10000;
 
 	/** 当获取失败时候动作*/
 	LockFailAction action() default LockFailAction.CONTINUE;
@@ -28,5 +28,5 @@ public @interface RedisLock {
 	long sleepMills() default 1000;
 
 	/** 重试次数*/
-	int retryTimes() default 5;
+	int retryTimes() default 50;
 }
