@@ -15,7 +15,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<redisson.version>3.11.0</redisson.version>
+		<redisson.version>3.22.0</redisson.version>
 		<aspectj.version>1.9.1</aspectj.version>
 	</properties>
 
